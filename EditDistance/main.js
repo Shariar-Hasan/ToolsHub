@@ -17,7 +17,7 @@ document.getElementById("edistance-form").addEventListener("submit", (e) => {
                 </tr>
               </thead>
               <tbody>
-                <tr>
+                <tr class="text-success text-center h5">
                   <td>${word1}</td>
                   <td>${word2}</td>
                 </tr>
