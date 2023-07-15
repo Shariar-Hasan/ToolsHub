@@ -33,8 +33,15 @@ function knnPredict(k, height, weight, algorithm) {
   distances.sort((a, b) => a.distance - b.distance);
   const nearestNeighbors = distances.slice(0, k);
   console.log(nearestNeighbors);
-  const predictedSize = nearestNeighbors[0].size;
+  let sizeCounts = {};
+  nearestNeighbors.forEach((point) => {
+    sizeCounts[point.size] = (sizeCounts[point.size] || 0) + 1;
+  });
 
+  // Find the size with the most occurrences
+  const predictedSize = Object.keys(sizeCounts).reduce((a, b) =>
+    sizeCounts[a] > sizeCounts[b] ? a : b
+  );
   return predictedSize;
 }
 
