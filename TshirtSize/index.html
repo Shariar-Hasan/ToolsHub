@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>T-Shirt Size Predictor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="shortcut icon"
       href="./../assets/favicon.png"
@@ -15,6 +15,7 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="./style.css" />
+    <title>T-Shirt Size Predictor</title>
   </head>
   <body>
     <div class="container mt-5">
@@ -64,10 +65,14 @@
               </div>
               <div class="my-3">
                 <label for="algorithm">Distance Function:</label>
-                <select class="form-select form-select-lg" name="algorithm" id="algorithm">
-                    <option value="0" selected>
-                      Euclidian Distance Function
-                    </option>
+                <select
+                  class="form-select form-select-lg"
+                  name="algorithm"
+                  id="algorithm"
+                >
+                  <option value="0" selected>
+                    Euclidian Distance Function
+                  </option>
                   <option value="1">Manhattan Distance Function</option>
                 </select>
               </div>

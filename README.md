@@ -1,22 +1,22 @@
 # Tools Hub
 
 ![Tools Hub](https://i.ibb.co/xFxnfGJ/image.png)
-
-ShirtoLogy is an innovative web app that helps you find your perfect t-shirt size using the power of Machine Learning. It utilizes the K-Nearest Neighbors (KNN) algorithm to predict your ideal t-shirt size based on your height and width measurements. With ShirtoLogy, you can say goodbye to ill-fitting t-shirts and confidently order your preferred size online.
+Tools Hub is a Tools website which have various tools, that uses machine learning algorithms and methods for calculation or operation or prediction. This tools are very easy to use and handy. A person can easily get adjust to its usage.
 
 ## Live Site
 
-Check out the live version of ShirtoLogy at [https://shariar-hasan.github.io/ToolsHub/](https://shariar-hasan.github.io/ToolsHub/)
+Check out the live version of ToolsHub at [https://shariar-hasan.github.io/ToolsHub/](https://shariar-hasan.github.io/ToolsHub/)
 
 ## How It Works
 
-The ToolsHub Contains multiple tools made with machine learning algorithm.
+The ToolsHub Contains multiple tools made with machine learning algorithm. SO all the tools in this website usege machine learning for their respective operation.
 
 ## Installation
 
-To run ShirtoLogy locally on your machine, follow these steps:
+To run ToolsHub locally on your machine, follow these steps:
 
 1. Clone the repository:
+
 ```
 git clone https://github.com/Shariar-Hasan/ToolsHub.git
 ```
@@ -27,31 +27,25 @@ git clone https://github.com/Shariar-Hasan/ToolsHub.git
 cd ToolsHub
 ```
 
-3. Open the `index.html` file in your web browser.
+3. Open the `index.html` file in your web browser. (You can use Live Server Extension in VS code)
 
 ## How to Use
 
-1. Open ShirtoLogy in your web browser by visiting the live site or running it locally (as described in the installation steps).
+1. Open ToolsHub in your web browser by visiting the live site or running it locally (as described in the installation steps).
 
-2. Once the app is loaded, you will see an input form with fields for entering your height and width measurements.
+2. Once the app is loaded, Some tools in it.
 
-3. Enter your height (in cm) and width (in cm) into the corresponding input fields.
+3. You can choose any tools and use it according to your action.
 
-4. Click on the "Predict T-Shirt Size" button.
+4. ToolsHub will process your action according to the data you provide.
 
-5. ShirtoLogy will process your measurements using the KNN algorithm and display the predicted t-shirt size.
-
-6. The app will also show an image of the t-shirt corresponding to your predicted size, giving you a visual representation of your perfect fit.
-
-7. If you are not satisfied with the result, you can try different height and width measurements to get another prediction.
-
-8. Happy t-shirt shopping with ShirtoLogy!
+5. Happy Webing with ToolsHub!
 
 ## Technology Used
 
 - HTML
-- CSS (Bootstrap for styling)
-- JavaScript (KNN algorithm for size prediction)
+- CSS (Raw CSS & Bootstrap for styling)
+- JavaScript (Machine Learning Algorithm)
 
 ## Contributing
 
@@ -59,8 +53,8 @@ Contributions are welcome! If you have any suggestions, bug fixes, or new featur
 
 ## License
 
-This project is licensed under the [MIT License](link_to_your_license_file).
+This project is licensed under the [MIT License](./LICENCE).
 
 ---
 
-Developed by [Your Name](link_to_your_website_or_github_profile) - Feel free to reach out!
+Developed by [Shariar Hasan](https://shariar-hasan.web.app/) - Feel free to reach out!
