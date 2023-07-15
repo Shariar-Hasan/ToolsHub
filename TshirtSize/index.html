@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>T-Shirt Size Predictor</title>
+    <link
+      rel="shortcut icon"
+      href="./../assets/favicon.png"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"
+      integrity="sha512-t4GWSVZO1eC8BM339Xd7Uphw5s17a86tIZIj8qRxhnKub6WoyhnrxeCIMeAqBPgdZGlCcG2PrZjMc+Wr78+5Xg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h1 class="mb-4 text-center text-primary">T-Shirt Size Predictor</h1>
+      <div class="row">
+        <div class="col-md-6 my-3">
+          <div class="shadow-sm border rounded-3 p-4 mx-auto">
+            <h2 class="text-center">T Shirt Form</h2>
+            <hr />
+            <form action="#" id="tshirt-form">
+              <div class="my-3">
+                <label for="height">Height (in cm):</label>
+                <input
+                  name="height"
+                  type="number"
+                  min="1"
+                  class="form-control form-control-lg"
+                  id="height"
+                  placeholder="Enter Your T-shirt Height"
+                  required="true"
+                />
+              </div>
+              <div class="my-3">
+                <label for="width">Width (in cm):</label>
+                <input
+                  type="number"
+                  name="width"
+                  min="1"
+                  class="form-control form-control-lg"
+                  id="width"
+                  placeholder="Enter Your T-shirt Width"
+                  required="true"
+                />
+              </div>
+              <div class="my-3">
+                <label for="kvalue">Value of K :</label>
+                <input
+                  type="number"
+                  name="kvalue"
+                  min="1"
+                  class="form-control form-control-lg"
+                  id="kvalue"
+                  value="3"
+                  placeholder="Enter Value of K "
+                  required="true"
+                />
+              </div>
+              <div class="my-3">
+                <label for="algorithm">Distance Function:</label>
+                <select class="form-control" name="algorithm" id="algorithm">
+                  <option value="0" selected>
+                    Euclidian Distance Function
+                  </option>
+                  <option value="1">Manhattan Distance Function</option>
+                </select>
+              </div>
+              <div class="my-3">
+                <button
+                  id="predictBtn"
+                  type="submit"
+                  class="btn btn-primary mt-4 btn-lg"
+                >
+                  Predict Size
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="col-md-6 my-3">
+          <div class="shadow-sm border rounded-3 p-4 mx-auto text-center">
+            <h2 class="text-center">Result</h2>
+            <hr />
+            <div id="result">
+              <img
+                class="w-75 px-5"
+                src="./assets/placeholder.gif"
+                alt="Whats the size?"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./data.js"></script>
+    <script src="./main.js"></script>
+  </body>
+</html>
