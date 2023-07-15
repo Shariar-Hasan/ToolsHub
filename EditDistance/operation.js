@@ -51,7 +51,7 @@ function editDistance(word1, word2) {
   
     return {
       distance: dp[m][n],
-      operations: operations
+      operations: operations.reverse()
     };
   }
   
