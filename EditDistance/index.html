@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="shortcut icon"
       href="./../assets/favicon.png"
@@ -24,7 +24,7 @@
           <form action="#" id="edistance-form">
             <div class="shadow border p-4 rounded-2">
               <div class="my-3">
-                <label for="word1">First Word :</label>
+                <label for="word1">Source Word :</label>
                 <input
                   type="text"
                   name="word1"
@@ -36,7 +36,7 @@
                 />
               </div>
               <div class="my-3">
-                <label for="word2">Second Word :</label>
+                <label for="word2">Target Word :</label>
                 <input
                   type="text"
                   name="word2"
@@ -47,13 +47,32 @@
                   autocomplete="off"
                 />
               </div>
-              <div class="my-3">
+              <div class="my-3 d-flex flex-column">
+                <div class="flex-grow-1 my-2 d-flex">
+                  <button
+                    id="defaultBtn"
+                    type="button"
+                    class="btn btn-outline-primary btn-lg btn-block flex-grow-1 mx-1"
+                    onclick="defaultSet()"
+                  >
+                    Default Values 📌
+                  </button>
+                  <button
+                    id="resetBtn"
+                    type="button"
+                    class="btn btn-outline-primary btn-lg btn-block flex-grow-1 mx-1"
+                    onclick="reset()"
+                  >
+                    Reset All ✖️
+                  </button>
+                </div>
+
                 <button
                   id="calculateBtn"
                   type="submit"
-                  class="btn btn-primary btn-lg btn-block"
+                  class="btn btn-primary btn-lg btn-block w-100"
                 >
-                  Calculate Distance
+                  Calculate Distance 🧮
                 </button>
               </div>
             </div>
@@ -61,7 +80,9 @@
         </div>
         <div class="col-md-6 col-12 my-3">
           <div id="result" class="shadow border p-4 rounded-2">
-            <h4 class="">Waiting for the calculation.......</h4>
+            <h4 class="text-center text-danger">
+              Fill up the source and target words and hit the calculate button
+            </h4>
           </div>
         </div>
       </div>

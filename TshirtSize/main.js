@@ -1,3 +1,8 @@
+const heightElement = document.getElementById("height");
+const weightElement = document.getElementById("weight");
+const kElement = document.getElementById("kvalue");
+const algorithmElement = document.getElementById("algorithm");
+
 function euclideanDistance(dataPoint1, dataPoint2) {
   const heightDiff = dataPoint1.height - dataPoint2.height;
   const weightDiff = dataPoint1.weight - dataPoint2.weight;
@@ -48,10 +53,10 @@ function knnPredict(k, height, weight, algorithm) {
 // Handle the prediction when the button is clicked
 document.getElementById("tshirt-form").addEventListener("submit", (e) => {
   e.preventDefault();
-  const height = document.getElementById("height").value;
-  const weight = document.getElementById("weight").value;
-  const k = document.getElementById("kvalue").value;
-  const algorithm = document.getElementById("algorithm").value;
+  const height = parseFloat(heightElement.value);
+  const weight = parseFloat(weightElement.value);
+  const k = parseInt(kElement.value);
+  const algorithm = algorithmElement.value;
   const predictedSize = knnPredict(k, height, weight, algorithm);
 
   // Display the result
@@ -60,3 +65,10 @@ document.getElementById("tshirt-form").addEventListener("submit", (e) => {
   <img class="w-75 px-5" src="./assets/${predictedSize}.png" alt="${predictedSize} T-Shirt">
   `;
 });
+
+const defaultValueClicked = () => {
+  heightElement.value = 176;
+  weightElement.value = 74.8;
+  kElement.value = 3;
+  algorithmElement.value = "0";
+};

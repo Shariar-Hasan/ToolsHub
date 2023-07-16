@@ -60,10 +60,17 @@
                   min="1"
                   class="form-control form-control-lg"
                   id="kvalue"
-                  value="3"
                   placeholder="Enter Value of K "
                   required="true"
+                  list="k-value-list"
                 />
+                <datalist id="k-value-list">
+                  <option value="3">3</option>
+                  <option value="5">5</option>
+                  <option value="7">7</option>
+                  <option value="9">9</option>
+                  <option value="11">11</option>
+                </datalist>
               </div>
               <div class="my-3">
                 <label for="algorithm">Distance Function:</label>
@@ -72,9 +79,10 @@
                   name="algorithm"
                   id="algorithm"
                 >
-                  <option value="0" selected>
-                    Euclidian Distance Function
+                  <option value="" disabled selected>
+                    Select Any Function
                   </option>
+                  <option value="0">Euclidian Distance Function</option>
                   <option value="1">Manhattan Distance Function</option>
                 </select>
               </div>
@@ -82,10 +90,27 @@
                 <button
                   id="predictBtn"
                   type="submit"
-                  class="btn btn-primary mt-4 btn-lg"
+                  class="btn btn-primary mt-4 btn-lg w-100 my-1"
                 >
-                  Predict Size
+                  Predict Size 🔮
                 </button>
+                <div class="d-flex justify-content-between">
+                  <button
+                    id="defaultBtn"
+                    type="button"
+                    class="btn btn-outline-primary my-1 btn-lg flex-fill mx-1"
+                    onclick="defaultValueClicked()"
+                  >
+                    Default Values 📌
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-outline-primary my-1 btn-lg flex-fill mx-1"
+                    onclick="reset()"
+                  >
+                    Reset All ✖️
+                  </button>
+                </div>
               </div>
             </form>
           </div>
