@@ -3,7 +3,6 @@ function updateClusteredData() {
 
   let row = "";
   data.forEach((item) => {
-    console.log({ item, data });
     const center = findClosestCenter(item.value);
     row += `<tr><td>${item.className}</td><td>${item.value} (Center: ${center.className})</td></tr>`;
   });

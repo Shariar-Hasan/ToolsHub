@@ -1,11 +1,12 @@
-const data = [];
-const centers = [];
+let data = [];
+let centers = [];
 // *****************all variable********************
 const calculationBtn = document.getElementById("calculationBtn");
 const addDataBtn = document.getElementById("addDataBtn");
 const resetAllBtn = document.getElementById("resetAllBtn");
 const clusteredDataElement = document.getElementById("clusteredData");
 const itemTable = document.getElementById("item-table");
+const classStatusTbody = document.getElementById("class-status-tbody");
 const classNameInput = document.getElementById("className");
 const valueInput = document.getElementById("value");
 const isCenterInput = document.getElementById("isCenter");
@@ -15,6 +16,7 @@ const addData = () => {
   const className = classNameInput.value;
   const value = parseFloat(valueInput.value);
   const isCenter = isCenterInput.checked;
+  console.log(isCenter);
   if (!(className && value)) {
     Swal.fire({
       icon: "error",
@@ -23,16 +25,14 @@ const addData = () => {
     });
     return;
   }
-  data.push({ className, value });
-  if (isCenter) centers.push({ className,  value });
+  data.push({ className, value, isCenter });
+  if (isCenter) centers.push({ className, value });
   classNameInput.value = "";
   valueInput.value = "";
   isCenterInput.checked = false;
   updateClassStatusTable();
-  console.log({ data, centers });
 };
 const calculate = () => {
-  console.log("calculation");
   if (data.length == 0) {
     Swal.fire({
       icon: "error",
@@ -56,19 +56,24 @@ const calculate = () => {
 const resetAll = () => {
   clusterTable.style.display = "none";
   itemTable.style.display = "block";
+  data = [];
+  centers = [];
+  updateClassStatusTable();
 };
 
 const updateClassStatusTable = () => {
-  data.reduce((item, result) => {
+  console.log(data);
+  let result = "";
+  data.forEach((item) => {
     result += `<tr>
         <td scope="row" data-row-count="${data.length - 1}">${
       item.className
     }</td>
         <td>${item.value}</td>
-        <td class="text-center"><input type="checkbox" /></td>
+        <td class="text-center">${item.isCenter ? "Centroid" : "X"}</td>
         </tr>`;
-  }, "");
-  itemTable.innerHTML = result;
+  });
+  classStatusTbody.innerHTML = result;
 };
 
 // ************************************
