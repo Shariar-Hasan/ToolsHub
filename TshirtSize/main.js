@@ -37,7 +37,6 @@ function knnPredict(k, height, weight, algorithm) {
   }
   distances.sort((a, b) => a.distance - b.distance);
   const nearestNeighbors = distances.slice(0, k);
-  console.log(nearestNeighbors);
   let sizeCounts = {};
   nearestNeighbors.forEach((point) => {
     sizeCounts[point.size] = (sizeCounts[point.size] || 0) + 1;
@@ -59,6 +58,22 @@ document.getElementById("tshirt-form").addEventListener("submit", (e) => {
   const algorithm = algorithmElement.value;
   const predictedSize = knnPredict(k, height, weight, algorithm);
 
+  // error handling
+  if (k < 1 || height < 1 || weight < 1) {
+    Swal.fire({
+      icon: "error",
+      title: "Invalid Input",
+      text: "Please Enter valid Input",
+    });
+    return;
+  } else if (k % 2 === 0) {
+    Swal.fire({
+    icon: "error",
+    title: "Unsupported K Value",
+    text: "Value of K must be a ODD number",
+  });
+    return;
+  }
   // Display the result
   document.getElementById("result").innerHTML = `
   <p class="text-primary h4">Predicted T-Shirt Size: <span class="h1">${predictedSize}</span></p>
@@ -67,7 +82,7 @@ document.getElementById("tshirt-form").addEventListener("submit", (e) => {
 });
 
 const defaultValueClicked = () => {
-  heightElement.value = 176;
+  heightElement.value = 175.26;
   weightElement.value = 74.8;
   kElement.value = 3;
   algorithmElement.value = "0";

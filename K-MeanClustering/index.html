@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="./../assets/favicon.png"
+      type="image/x-icon"
+    />
+    <title>K-Means Clustering</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h1 class="mb-4 text-center">K-Means Clustering</h1>
+      <div class="row">
+        <div class="my-5 col-md-6 border-1 p-3 rounded-5">
+          <h2>Input Data and Centers</h2>
+          <form id="inputForm">
+            <div class="form-group">
+              <label for="className">Class Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="className"
+                placeholder="Enter a Class Name"
+              />
+            </div>
+            <div class="form-group">
+              <label for="value">Value</label>
+              <input
+                type="number"
+                class="form-control"
+                id="value"
+                placeholder="Enter a Class Value"
+              />
+            </div>
+
+            <div class="form-check my-3">
+              <label class="form-check-label">
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  name="isCenter"
+                  id="isCenter"
+                />
+                Set as Center
+              </label>
+            </div>
+
+            <button type="button" class="btn btn-success" id="addDataBtn">
+              Add Data ➕
+            </button>
+            <button type="button" class="btn btn-danger" id="resetAllBtn">
+              Reset ✖️
+            </button>
+          </form>
+        </div>
+        <div class="my-5 col-md-6 border-1 p-3 rounded-5" id="item-table">
+          <h2 class="text-center">Class Status</h2>
+          <table class="table text-center table-bordered table-striped">
+            <thead>
+              <tr>
+                <th>Class Name</th>
+                <th>Value</th>
+                <th>Center Status</th>
+              </tr>
+            </thead>
+            <tbody id="class-status-tbody">
+              <tr>
+                <td scope="row" data-row-count="0">A</td>
+                <td>222</td>
+                <td class="text-center">
+                  <input type="checkbox" onchange="" />
+                </td>
+              </tr>
+              <tr>
+                <td scope="row"></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <button type="button" class="btn btn-success" id="calculationBtn">
+            Calculate Clusters 📌
+          </button>
+        </div>
+        <div
+          class="my-5 col-md-6 border-1 p-3 rounded-5 mx-auto"
+          id="clusterTable"
+        >
+          <h2>Clustered Data</h2>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th>Class</th>
+                <th>Value</th>
+              </tr>
+            </thead>
+            <tbody id="clusteredData"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center my-5">
+      <a href="./../TshirtSize/">
+        <button class="btn btn-secondary">⬅️ T Shirt Size Prediction</button>
+      </a>
+      <a href="./../EditDistance/">
+        <button class="btn btn-secondary">Edit Distance Algorithm ➡️</button>
+      </a>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./kMeansCalculations.js"></script>
+    <script src="./main.js"></script>
+  </body>
+</html>

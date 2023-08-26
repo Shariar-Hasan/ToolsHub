@@ -10,7 +10,7 @@ document.getElementById("edistance-form").addEventListener("submit", (e) => {
   e.preventDefault();
   const word1 = word1Element.value;
   const word2 = word2Element.value;
-  const { distance, operations, similerity } = editDistance(word1, word2);
+  const { distance, operations, similarity } = editDistance(word1, word2);
 
   resultElement.innerHTML = `
   <table class="table table-bordered">
@@ -29,7 +29,7 @@ document.getElementById("edistance-form").addEventListener("submit", (e) => {
                   <td colspan="2">Total Operation : <span class="h5">${distance}</span></td>
                 </tr>
                 <tr>
-                  <td colspan="2">Similerity : <span class="h5">${similerity} %</span></td>
+                  <td colspan="2">Similerity : <span class="h5">${similarity} %</span></td>
                 </tr>
                 <tr>
                   <td colspan="2">
