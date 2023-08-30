@@ -1,5 +1,4 @@
-let data = [];
-let centers = [];
+
 // *****************all variable********************
 const calculationBtn = document.getElementById("calculationBtn");
 const addDataBtn = document.getElementById("addDataBtn");

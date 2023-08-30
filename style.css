@@ -1,0 +1,6 @@
+.click-effect {
+  transition: all 0.25s ease-in-out;
+}
+.click-effect:active {
+  transform: scale(0.9);
+}
