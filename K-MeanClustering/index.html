@@ -13,6 +13,7 @@
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="./../style.css">
   </head>
   <body>
     <div class="container mt-5">
@@ -20,7 +21,7 @@
       <div class="row">
         <div class="my-5 col-md-6 border-1 p-3 rounded-5">
           <h2>Input Data and Centers</h2>
-          <form id="inputForm">
+          <form id="inputForm" autocomplete="off">
             <div class="form-group">
               <label for="className">Class Name</label>
               <input
@@ -52,10 +53,10 @@
               </label>
             </div>
 
-            <button type="button" class="btn btn-success" id="addDataBtn">
+            <button type="button" class="btn btn-success click-effect" id="addDataBtn">
               Add Data ➕
             </button>
-            <button type="button" class="btn btn-danger" id="resetAllBtn">
+            <button type="button" class="btn btn-danger click-effect" id="resetAllBtn">
               Reset ✖️
             </button>
           </form>
@@ -70,11 +71,10 @@
                 <th>Center Status</th>
               </tr>
             </thead>
-            <tbody id="class-status-tbody">
-            </tbody>
+            <tbody id="class-status-tbody"></tbody>
           </table>
 
-          <button type="button" class="btn btn-success" id="calculationBtn">
+          <button type="button" class="btn btn-success  click-effect" id="calculationBtn">
             Calculate Clusters 📌
           </button>
         </div>
@@ -98,13 +98,17 @@
 
     <div class="text-center my-5">
       <a href="./../TshirtSize/">
-        <button class="btn btn-secondary">⬅️ T Shirt Size Prediction</button>
+        <button class="btn btn-secondary click-effect">⬅️ T Shirt Size Prediction</button>
       </a>
       <a href="./../EditDistance/">
-        <button class="btn btn-secondary">Edit Distance Algorithm ➡️</button>
+        <button class="btn btn-secondary click-effect">Edit Distance Algorithm ➡️</button>
       </a>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+      let data = [];
+      let centers = [];
+    </script>
     <script src="./kMeansCalculations.js"></script>
     <script src="./main.js"></script>
   </body>

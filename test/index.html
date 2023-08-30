@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html data-theme="auto">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
@@ -8,54 +8,56 @@
       type="image/x-icon"
     />
     <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@3.6.4/dist/full.css"
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"
-      integrity="sha512-t4GWSVZO1eC8BM339Xd7Uphw5s17a86tIZIj8qRxhnKub6WoyhnrxeCIMeAqBPgdZGlCcG2PrZjMc+Wr78+5Xg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
+      type="text/css"
     />
-    <link rel="stylesheet" href="./style.css" />
-    <link rel="stylesheet" href="./../style.css">
     <title>T-Shirt Size Predictor</title>
   </head>
-  <body>
-    <div class="body"></div>
-    <div class="container mt-5">
-      <h1 class="mb-4 text-center text-success">T-Shirt Size Predictor</h1>
-      <div class="row">
-        <div class="col-md-6 my-3">
-          <div class="shadow-sm border rounded-3 p-4 mx-auto">
-            <h2 class="text-center">T Shirt Form</h2>
-            <hr />
+  <body class="bg-white dark:bg-gray-800">
+    <div class="bg-white dark:bg-gray-800">
+      <div class="container mx-auto my-5">
+        <h1 class="mb-4 text-center text-success text-white text-4xl">
+          T-Shirt Size Predictor
+        </h1>
+        <div class="grid grid-cols-12 gap-4">
+          <div class="shadow-sm border rounded-3 p-4 mx-auto col-span-12 md:col-span-6">
+            <h2 class="text-center text-xl">T Shirt Form</h2>
+            <hr class="my-3" />
+
             <form action="#" id="tshirt-form">
               <div class="my-3">
-                <label for="height">Height (in cm):</label>
+                <label for="height" class="dark:text-white"
+                  >Height (in cm):</label
+                >
                 <input
                   name="height"
                   type="number"
                   step="any"
-                  class="form-control form-control-lg"
+                  class="form-input"
                   id="height"
                   placeholder="Enter Your Height"
                 />
               </div>
               <div class="my-3">
-                <label for="weight">Weight (in kg):</label>
+                <label for="weight" class="dark:text-white"
+                  >Weight (in kg):</label
+                >
                 <input
                   type="number"
                   name="weight"
                   step="any"
-                  class="form-control form-control-lg"
+                  class="form-input"
                   id="weight"
-                  placeholder="Enter Your weight"
+                  placeholder="Enter Your Weight"
                 />
               </div>
               <div class="my-3">
-                <label for="kvalue">Value of K :</label>
+                <label for="kvalue" class="dark:text-white">Value of K :</label>
                 <input
                   type="number"
                   name="kvalue"
-                  class="form-control form-control-lg"
+                  class="form-input"
                   id="kvalue"
                   placeholder="Enter Value of K (ODD value recommended)"
                   list="k-value-list"
@@ -69,16 +71,14 @@
                 </datalist>
               </div>
               <div class="my-3">
-                <label for="algorithm">Distance Function:</label>
-                <select
-                  class="form-select form-select-lg"
-                  name="algorithm"
-                  id="algorithm"
+                <label for="algorithm" class="dark:text-white"
+                  >Distance Function:</label
                 >
+                <select class="form-select" name="algorithm" id="algorithm">
                   <option value="" disabled selected>
                     Select Any Function
                   </option>
-                  <option value="0">Euclidian Distance Function</option>
+                  <option value="0">Euclidean Distance Function</option>
                   <option value="1">Manhattan Distance Function</option>
                 </select>
               </div>
@@ -86,22 +86,22 @@
                 <button
                   id="predictBtn"
                   type="submit"
-                  class="btn btn-outline-success mt-4 btn-lg w-100 my-1"
+                  class="btn btn-outline-success mt-4 btn-lg w-full my-1"
                 >
                   Predict Size 🔮
                 </button>
-                <div class="d-flex justify-content-between">
+                <div class="flex justify-between">
                   <button
                     id="defaultBtn"
                     type="button"
-                    class="btn btn-outline-info my-1 btn-lg flex-fill mx-1"
+                    class="btn btn-outline-info my-1 btn-lg flex-1 mx-1"
                     onclick="defaultValueClicked()"
                   >
                     Default Values 📌
                   </button>
                   <button
                     type="button"
-                    class="btn btn-outline-danger my-1 btn-lg flex-fill mx-1"
+                    class="btn btn-outline-danger my-1 btn-lg flex-1 mx-1"
                     onclick="resetAll()"
                   >
                     Reset All ✖️
@@ -109,12 +109,12 @@
                 </div>
               </div>
             </form>
+
+            <!-- ... (Remaining code) ... -->
           </div>
-        </div>
-        <div class="col-md-6 my-3">
           <div class="shadow-sm border rounded-3 p-4 mx-auto text-center">
-            <h2 class="text-center">Result</h2>
-            <hr />
+            <h2 class="text-center text-xl">Result</h2>
+            <hr class="my-3" />
             <div id="result">
               <img
                 class="w-75 px-5"
@@ -125,15 +125,18 @@
           </div>
         </div>
       </div>
-    </div>
-
-    <div class="text-center my-5">
-      <a href="./../K-MeanClustering/">
-        <button class="btn btn-secondary click-effect">⬅️ K Means Clustering</button>
-      </a>
-      <a href="./../EditDistance/">
-        <button class="btn btn-secondary click-effect">Edit Distance Algorithm ➡️</button>
-      </a>
+      <div class="text-center my-5">
+        <a href="./../K-MeanClustering/">
+          <button class="btn btn-secondary click-effect dark:text-white">
+            ⬅️ K Means Clustering
+          </button>
+        </a>
+        <a href="./../EditDistance/">
+          <button class="btn btn-secondary click-effect dark:text-white">
+            Edit Distance Algorithm ➡️
+          </button>
+        </a>
+      </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="./data.js"></script>
